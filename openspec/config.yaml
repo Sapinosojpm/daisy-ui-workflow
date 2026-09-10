@@ -1,0 +1,37 @@
+schema: spec-driven
+
+# Project context for AI assistants
+context: |
+  Tech Stack: Tailwind CSS v4 / v3, DaisyUI v5 (https://daisyui.com/), HTML5, JavaScript.
+  Design System Rules:
+  - Use semantic DaisyUI component classes (e.g., `btn btn-primary`, `card bg-base-100 shadow-xl`, `navbar bg-base-300`, `modal`) instead of verbose custom utility classes.
+  - Rely on DaisyUI CSS variables and semantic color tokens (`primary`, `secondary`, `accent`, `neutral`, `base-100`, `base-200`, `base-300`, `info`, `success`, `warning`, `error`).
+  - Always support theme switching using `data-theme` attribute on the root `<html>` element (e.g., `light`, `dark`, `cupcake`, `cyberpunk`).
+  - Mobile-first, fully responsive layouts using Tailwind responsive prefixes (`sm:`, `md:`, `lg:`, `xl:`).
+  - Component-driven visual specification with clear interactive states (default, hover, focus, active, disabled).
+
+# Per-artifact rules
+rules:
+  proposal:
+    - Include a clear Visual Design & Layout summary.
+    - Specify the inventory of DaisyUI components required for the feature.
+    - Outline color theme requirements and responsive breakpoints.
+    - Include a Non-Goals section to bound the scope.
+  specs:
+    - Map every UI element directly to exact DaisyUI class names and HTML hierarchy.
+    - Define component props, variants, sizes, and semantic color modifiers.
+    - Specify responsive layout structures.
+    - Detail interactive behavior.
+  tasks:
+    - Organize tasks sequentially from HTML scaffolding to DaisyUI styling and verification.
+    - Each task must refer to specific DaisyUI components and spec requirements.
+
+# Advisory operation guidance
+operations:
+  apply:
+    guidance:
+      - Always verify generated HTML/CSS against DaisyUI documentation class signatures.
+      - Ensure data-theme switching works dynamically across all added components.
+  archive:
+    guidance:
+      - Summarize updated main specs in openspec/specs/ after merging delta specs.
